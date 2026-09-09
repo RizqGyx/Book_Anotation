@@ -1,0 +1,27 @@
+# Core. Ultralytics >= 8.4.0 is required: the YOLO26 checkpoints
+# (yolo26n-seg.pt) only exist from that asset release onward.
+ultralytics>=8.4.143
+
+# Deep learning backend. The wheel for CPU / Apple MPS / CUDA is picked
+# automatically for the platform.
+torch>=2.2.0
+torchvision>=0.17.0
+
+# Synthetic page rendering (PDF layout and annotation drawing).
+pymupdf>=1.24.0
+
+# Data, metrics and plotting.
+numpy>=1.26.0
+pandas>=2.0.0
+matplotlib>=3.8.0
+opencv-python>=4.9.0
+Pillow>=10.0.0
+PyYAML>=6.0
+tqdm>=4.66.0
+
+# The V3 augmentation pipeline deliberately uses only OpenCV and NumPy from the
+# list above. Albumentations is not used: geometric transforms here must be
+# applied to the image and to every instance mask with the identical operator,
+# including cv2.remap for page curvature, which is not affine. Writing them
+# against OpenCV directly makes that guarantee explicit and testable.
+# See docs/DESIGN_NOTES.md section 12.

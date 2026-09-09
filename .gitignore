@@ -1,0 +1,50 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Datasets and runs - regenerate from a fixed seed, several GB
+dataset_output/
+dataset_output_v3/
+dataset_output_v1_60img/
+dataset_output_v2_final/
+yolo_dataset/
+yolo_dataset_v3/
+yolo_dataset_v1_60img/
+yolo_dataset_v2_final/
+
+# Training runs and their artefacts
+output/
+output_v3/
+output_baseline_60img/
+output_v2_final/
+runs/
+
+# Model weights - downloaded automatically or produced by training
+*.pt
+*.onnx
+*.mlpackage/
+*.mlmodel
+
+# Real photo holdout - keep the instructions, never the photos
+real_holdout/*
+!real_holdout/README.md
+
+# Source PDF, not used by any script
+*.pdf
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Local scaffolding, not part of the project
+COMMIT_PLAN.md

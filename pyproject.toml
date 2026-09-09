@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "annotation-detector"
+version = "3.0.0"
+description = "Instance segmentation of reader annotations on book pages"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "ultralytics>=8.4.143",
+    "torch>=2.2.0",
+    "torchvision>=0.17.0",
+    "pymupdf>=1.24.0",
+    "numpy>=1.26.0",
+    "pandas>=2.0.0",
+    "matplotlib>=3.8.0",
+    "opencv-python>=4.9.0",
+    "Pillow>=10.0.0",
+    "PyYAML>=6.0",
+    "tqdm>=4.66.0",
+]
+
+[project.urls]
+Repository = "https://github.com/berzki/annotation-detector"
+
+[tool.setuptools.packages.find]
+include = ["annotation_detector*"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
